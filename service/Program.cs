@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Devices.Samples
             int port = int.Parse(s_port, CultureInfo.InvariantCulture);
 
             Console.WriteLine("Starting Host Service using;");
-            Console.WriteLine($"Connection String: {s_connectionString.Substring(0,84) + "*****************"}");
+            Console.WriteLine($"Connection String: {s_connectionString.Substring(0,s_connectionString.IndexOf("SharedAccessKey=") + 16) + "*****************"}");
             Console.WriteLine($"Device ID: {s_deviceId}");
             Console.WriteLine($"Port: {s_port}");            
 
