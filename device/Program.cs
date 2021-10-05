@@ -65,6 +65,11 @@ namespace Microsoft.Azure.Devices.Client.Samples
 
             int port = int.Parse(s_port, CultureInfo.InvariantCulture);
 
+            Console.WriteLine("Starting Device Service using;");
+            Console.WriteLine($"Connection String: {s_deviceConnectionString.Substring(1,76) + "*****************"}");
+            Console.WriteLine($"HostName: {s_hostName}");
+            Console.WriteLine($"Port: {s_port}");            
+
             using (DeviceClient deviceClient = DeviceClient.CreateFromConnectionString(s_deviceConnectionString, s_transportType))
             {
                 if (deviceClient == null)

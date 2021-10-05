@@ -60,6 +60,11 @@ namespace Microsoft.Azure.Devices.Samples
 
             int port = int.Parse(s_port, CultureInfo.InvariantCulture);
 
+            Console.WriteLine("Starting Host Service using;");
+            Console.WriteLine($"Connection String: {s_connectionString.Substring(1,84) + "*****************"}");
+            Console.WriteLine($"Device ID: {s_deviceId}");
+            Console.WriteLine($"Port: {s_port}");            
+
             using (ServiceClient serviceClient = ServiceClient.CreateFromConnectionString(s_connectionString, s_transportType))
             {
                 var sample = new DeviceStreamSample(serviceClient, s_deviceId, port);
