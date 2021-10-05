@@ -14,19 +14,19 @@ namespace Microsoft.Azure.Devices.Samples
         // - pass this value as a command-prompt argument
         // - set the IOTHUB_CONNECTION_STRING environment variable 
         // - create a launchSettings.json (see launchSettings.json.template) containing the variable
-        private static string s_connectionString = Environment.GetEnvironmentVariable("IOTHUB_CONNECTION_STRING");
+        private static string s_connectionString = Environment.GetEnvironmentVariable("IOTHUB_CONNECTION_STRING") ?? "";
 
         // ID of the device to interact with.
         // - pass this value as a command-prompt argument
         // - set the DEVICE_ID environment variable 
         // - create a launchSettings.json (see launchSettings.json.template) containing the variable
-        private static string s_deviceId = Environment.GetEnvironmentVariable("DEVICE_ID");
+        private static string s_deviceId = Environment.GetEnvironmentVariable("DEVICE_ID") ?? "";
 
         // Local port this sample will open to proxy traffic to a device.
         // - pass this value as a command-prompt argument
         // - set the LOCAL_PORT environment variable 
         // - create a launchSettings.json (see launchSettings.json.template) containing the variable
-        private static string s_port = Environment.GetEnvironmentVariable("LOCAL_PORT");
+        private static string s_port = Environment.GetEnvironmentVariable("LOCAL_PORT") ?? "";
 
         // Select one of the following transports used by ServiceClient to connect to IoT Hub.
         private static readonly TransportType s_transportType = TransportType.Amqp;
@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Devices.Samples
             int port = int.Parse(s_port, CultureInfo.InvariantCulture);
 
             Console.WriteLine("Starting Host Service using;");
-            Console.WriteLine($"Connection String: {s_connectionString.Substring(1,84) + "*****************"}");
+            Console.WriteLine($"Connection String: {s_connectionString.Substring(0,84) + "*****************"}");
             Console.WriteLine($"Device ID: {s_deviceId}");
             Console.WriteLine($"Port: {s_port}");            
 

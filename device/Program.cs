@@ -17,19 +17,19 @@ namespace Microsoft.Azure.Devices.Client.Samples
         // - pass this value as a command-prompt argument
         // - set the IOTHUB_DEVICE_CONN_STRING environment variable 
         // - create a launchSettings.json (see launchSettings.json.template) containing the variable
-        private static string s_deviceConnectionString = Environment.GetEnvironmentVariable("IOTHUB_DEVICE_CONN_STRING");
+        private static string s_deviceConnectionString = Environment.GetEnvironmentVariable("IOTHUB_DEVICE_CONN_STRING") ?? "";
 
         // Host name or IP address of a service the device will proxy traffic to.
         // - pass this value as a command-prompt argument
         // - set the REMOTE_HOST_NAME environment variable 
         // - create a launchSettings.json (see launchSettings.json.template) containing the variable
-        private static string s_hostName = Environment.GetEnvironmentVariable("REMOTE_HOST_NAME");
+        private static string s_hostName = Environment.GetEnvironmentVariable("REMOTE_HOST_NAME") ?? "";
 
         // Port of a service the device will proxy traffic to.
         // - pass this value as a command-prompt argument
         // - set the REMOTE_PORT environment variable 
         // - create a launchSettings.json (see launchSettings.json.template) containing the variable
-        private static string s_port = Environment.GetEnvironmentVariable("REMOTE_PORT");
+        private static string s_port = Environment.GetEnvironmentVariable("REMOTE_PORT") ?? "";
 
         // Select one of the following transports used by DeviceClient to connect to IoT Hub.
         private static readonly TransportType s_transportType = TransportType.Amqp;
