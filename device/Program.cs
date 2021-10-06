@@ -68,7 +68,13 @@ namespace Microsoft.Azure.Devices.Client.Samples
             Console.WriteLine("Starting Device Service using;");
             Console.WriteLine($"Connection String: {s_deviceConnectionString.Substring(0,s_deviceConnectionString.IndexOf("SharedAccessKey=") + 16) + "*****************"}");
             Console.WriteLine($"HostName: {s_hostName}");
-            Console.WriteLine($"Port: {s_port}");            
+            Console.WriteLine($"Port: {s_port}");     
+
+            Console.WriteLine();
+
+            Console.WriteLine($"Waiting for Connection from Host");    
+
+            Console.WriteLine();       
 
             using (DeviceClient deviceClient = DeviceClient.CreateFromConnectionString(s_deviceConnectionString, s_transportType))
             {
