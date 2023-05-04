@@ -3,9 +3,9 @@
     "DeviceStreamSample": {
       "commandName": "Project",
         "environmentVariables": {
-            "IOTHUB_DEVICE_CONN_STRING": "<yourDeviceConnectionString>",
-            "REMOTE_HOST_NAME": "<addressToTargetService>",
-            "REMOTE_PORT": "<portOfTargetService>"
+            "IOTHUB_DEVICE_CONN_STRING": "HostName=Balajitesthub.azure-devices.net;SharedAccessKeyName=device;SharedAccessKey=pZwy6zzdLDmwC3DEgFoNLAvLpE1HGMBRzYFiCP1t3eM=",
+            "REMOTE_HOST_NAME": "192.168.1.19",
+            "REMOTE_PORT": "22"
         }
     }
   }
